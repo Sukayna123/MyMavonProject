@@ -89,5 +89,7 @@ Thread.sleep(2000);
         checkOutList.add(checkOutProduct2.getText());
         System.out.println(checkOutList.contains(product));
         System.out.println(checkOutList.contains(product2));
+
+        driver.quit();
     }
 }
