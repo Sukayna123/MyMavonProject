@@ -8,11 +8,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class XPathAssignment {
     public static void main(String[] args) throws InterruptedException {
-        //9- Check if you see your products
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -38,6 +39,7 @@ public class XPathAssignment {
 
         //3- Click on Sauce Labs Backpack and add to the cart
         WebElement backBack1=driver.findElement(By.xpath("//div[text()='Sauce Labs Backpack'] "));
+        String product=backBack1.getText();
       backBack1.click();
 
        WebElement AddToCart=driver.findElement(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack'] "));
@@ -48,6 +50,7 @@ public class XPathAssignment {
         back.click();
         //5- Click on Sauce Labs Bolt T-Shirt and add to the cart
         WebElement backBack2=driver.findElement(By.xpath("//div[text()='Sauce Labs Bolt T-Shirt']"));
+        String product2=backBack2.getText();
         backBack2.click();
         //button[@id='add-to-cart-sauce-labs-bolt-t-shirt']
 
@@ -76,7 +79,15 @@ Thread.sleep(2000);
         WebElement continuee=driver.findElement(By.id("continue"));
        continuee.click();
 
+        //9- Check if you see your products
+        WebElement checkOutProduct1=driver.findElement(By.xpath("(//div[@class='inventory_item_name'])[1]"));
 
+        WebElement checkOutProduct2=driver.findElement(By.xpath("(//div[@class='inventory_item_name'])[2]"));
 
+        List<String> checkOutList=new ArrayList<>();
+        checkOutList.add(checkOutProduct1.getText());
+        checkOutList.add(checkOutProduct2.getText());
+        System.out.println(checkOutList.contains(product));
+        System.out.println(checkOutList.contains(product2));
     }
 }
