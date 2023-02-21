@@ -4,8 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import technostudyB7.UtilityClass;
 
-public class ActionsClick extends UtilityClass{
+public class ActionsClick extends UtilityClass {
     public static void main(String[] args) {
         driver.get("https://demoqa.com/buttons");
         WebElement doubleClickButton= driver.findElement(By.id("doubleClickBtn"));

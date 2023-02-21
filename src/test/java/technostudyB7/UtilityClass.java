@@ -1,4 +1,4 @@
-package technostudyB7.day7;
+package technostudyB7;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +14,15 @@ public class UtilityClass {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
       //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     }
 
+    public static void quitDriver(int time){
+        try {
+            Thread.sleep(time*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.quit();
+    }
     }
