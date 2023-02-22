@@ -25,4 +25,13 @@ public class UtilityClass {
         }
         driver.quit();
     }
+
+    //a wait method so we can see it
+    public static void hardWait(int time){
+        try {
+            Thread.sleep(time*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
     }
