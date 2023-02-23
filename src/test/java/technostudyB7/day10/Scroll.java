@@ -15,5 +15,6 @@ hardWait(3);
         JJ.executeScript("arguments[0].scrollIntoView(true);",element);
 
         System.out.println(element.getText());
+        driver.quit();
     }
 }
